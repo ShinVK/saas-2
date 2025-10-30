@@ -1,12 +1,10 @@
-'use client'
-import type { Metadata } from 'next'
-
-import { ThemeProvider } from 'next-theme'
 import './globals.css'
+import { Metadata } from 'next'
+import { Providers } from './providers'
 
-// export const metadata: Metadata = {
-//   title: 'Create Next App',
-// }
+export const metadata: Metadata = {
+  title: 'Create Next App',
+}
 
 export default function RootLayout({
   children,
@@ -16,9 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="dark">
-          {children}
-        </ThemeProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   )

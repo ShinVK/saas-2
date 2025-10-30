@@ -13,7 +13,7 @@ export async function getProjects(app: FastifyInstance) {
     .withTypeProvider<ZodTypeProvider>()
     .register(auth)
     .get(
-      '/organizations/:slug/projects/',
+      '/organizations/:slug/projects',
       {
         schema: {
           tags: ['projects'],
@@ -83,6 +83,7 @@ export async function getProjects(app: FastifyInstance) {
             },
           },
         })
+        console.log('🚀 VOA ~ getProjects ~ projects:', projects)
 
         return reply.status(200).send({ projects })
       }
