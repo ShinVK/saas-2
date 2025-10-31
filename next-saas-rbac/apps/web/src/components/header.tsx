@@ -7,12 +7,13 @@ import { ability } from '@/auth/auth'
 import { Separator } from './ui/separator'
 import { ThemeSwitcher } from './theme/theme-switcher'
 import ProjectSwitcher from './project-switcher'
+import PendingInvites from './pending-invites'
 
 export async function Header() {
   const permissions = await ability()
 
   return (
-    <div className="mx-auto flex max-w-[1200px] items-center justify-between border-b pb-2">
+    <div className="mx-auto flex max-w-[1200px] items-center justify-between">
       <div className="flex items-center gap-3">
         <Image
           src={genericLogo}
@@ -32,6 +33,7 @@ export async function Header() {
         )}
       </div>
       <div className="flex items-center gap-4">
+        <PendingInvites />
         <ThemeSwitcher />
         <Separator orientation="vertical" className="h-5" />
         <ProfileButton />

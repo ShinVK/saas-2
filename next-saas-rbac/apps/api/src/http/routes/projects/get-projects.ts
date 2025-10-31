@@ -83,7 +83,6 @@ export async function getProjects(app: FastifyInstance) {
             },
           },
         })
-        console.log('🚀 VOA ~ getProjects ~ projects:', projects)
 
         return reply.status(200).send({ projects })
       }

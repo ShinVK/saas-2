@@ -1,6 +1,6 @@
 'use client'
 
-import { ChevronsUpDown, Loader, Loader2, PlusCircle } from 'lucide-react'
+import { ChevronsUpDown, Loader2, PlusCircle } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 import {
   DropdownMenu,
@@ -13,7 +13,6 @@ import {
 } from './ui/dropdown-menu'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
-import { use } from 'react'
 import { getProjects } from '@/http/get-projects'
 import { useQuery } from '@tanstack/react-query'
 import { Skeleton } from './ui/skeleton'

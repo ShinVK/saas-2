@@ -19,6 +19,8 @@ export const permissions: Record<Role, PermissionByRole> = {
   MEMBER(user, { can }) {
     can('get', 'User')
     can(['create', 'get'], 'Project')
+    // can(['get'], 'Project')
+
     can(['update', 'delete'], 'Project', { ownerId: { $eq: user.id } })
   },
   BILLING(_, { can }) {

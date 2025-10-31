@@ -19,12 +19,9 @@ interface IGetProjectsResponse {
 }
 
 export async function getProjects(orgSlug: string) {
-  await new Promise((resolve) => setTimeout(resolve, 2000))
-
   const result = await api
     .get(`organizations/${orgSlug}/projects`)
     .json<IGetProjectsResponse>()
-  console.log('🚀 VOA ~ getProjects ~ result:', result)
 
   return result
 }

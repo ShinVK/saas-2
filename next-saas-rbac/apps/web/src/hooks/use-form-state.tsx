@@ -24,13 +24,20 @@ export function useFormState(
     event.preventDefault()
     const form = event.currentTarget
     const data = new FormData(form)
+
     startTransition(async () => {
       const state = await action(data)
-      setFormState(state)
 
-      if (state.success === true && onSuccess) {
-        await onSuccess()
+      if (state.success === true) {
+        // Reset do form deve ser feito de forma síncrona
+        form.reset()
+
+        if (onSuccess) {
+          await onSuccess()
+        }
       }
+
+      setFormState(state)
     })
   }
 

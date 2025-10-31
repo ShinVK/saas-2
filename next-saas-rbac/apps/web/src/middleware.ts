@@ -2,11 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
-  console.log('🚀 VOA ~ middleware ~ pathname:', pathname)
-
   const response = NextResponse.next()
-
-  console.log('ola mundo')
 
   if (pathname.startsWith('/org')) {
     const [, , slug] = pathname.split('/')
